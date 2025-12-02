@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<title>加载动画</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加载动画</title>
+    <!-- 引入动画 CSS -->
+    <link rel="stylesheet" href="building.css">
+    <style>
+        /* 居中整个页面内容 */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff; /* 可改为你喜欢的背景色 */
+            flex-direction: column; /* 垂直排列动画和文字 */
+            font-family: Arial, sans-serif;
+        }
 
-<!-- 引入你的 building.css（你自己的动画 CSS 文件） -->
-<link rel="stylesheet" href="./building.css">
+        .loader {
+            max-width: 90vw;
+            max-height: 60vh; /* 给文字留空间 */
+        }
 
-<style>
-  /* 页面整体居中布局 */
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;     /* 上动画，下文字 */
-    justify-content: center;    /* 垂直居中 */
-    align-items: center;        /* 水平居中 */
-    background: #fff;
-  }
-
-  /* 底部文字 */
-  .under-text {
-    margin-top: 20px;
-    font-size: 20px;
-    color: #555;
-  }
-</style>
-
+        /* 施工中文字样式 */
+        .loading-text {
+            margin-top: 20px;
+            font-size: clamp(16px, 2.5vw, 24px); /* 根据屏幕自适应字体大小 */
+            color: #333333; /* 文字颜色可修改 */
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <!-- 动画容器 -->
+    <div class="loader">
+      <div class="box box0"><div></div></div>
+      <div class="box box1"><div></div></div>
+      <div class="box box2"><div></div></div>
+      <div class="box box3"><div></div></div>
+      <div class="box box4"><div></div></div>
+      <div class="box box5"><div></div></div>
+      <div class="box box6"><div></div></div>
+      <div class="box box7"><div></div></div>
+      <div class="ground"><div></div></div>
+    </div>
 
-<!-- From Uiverse.io by Admin12121 -->
-<div class="loader">
-  <div class="box box0"><div></div></div>
-  <div class="box box1"><div></div></div>
-  <div class="box box2"><div></div></div>
-  <div class="box box3"><div></div></div>
-  <div class="box box4"><div></div></div>
-  <div class="box box5"><div></div></div>
-  <div class="box box6"><div></div></div>
-  <div class="box box7"><div></div></div>
-  <div class="ground"><div></div></div>
-</div>
-
-<!-- 下方文字 -->
-<div class="under-text">施工中...</div>
-
+    <!-- 文字 -->
+    <div class="loading-text">施工中…</div>
 </body>
 </html>
